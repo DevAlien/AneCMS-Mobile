@@ -21,7 +21,6 @@
             android:key="@string/settings_server"
             android:title="@string/server" 
             android:summary="@string/insert_server"
-            android:defaultValue="pict2.jpg"
         />
     </PreferenceCategory>
 </PreferenceScreen>

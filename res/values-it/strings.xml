@@ -13,4 +13,5 @@
 <string name="post_title">Titolo del post</string>
 <string name="post_message">Testo del post</string>
 <string name="authentication">Autenticazione</string>
+<string name="post_it">Pubblica</string>
 </resources>

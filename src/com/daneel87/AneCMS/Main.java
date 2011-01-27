@@ -21,7 +21,9 @@ import android.widget.Toast;
 import org.xmlrpc.android.XMLRPCClient;
 import org.xmlrpc.android.XMLRPCException;
 
-public class xmlrpc extends Activity {
+import com.daneel87.AneCMS.Blog.Blog;
+
+public class Main extends Activity {
 	
 	private String username;
 	private String password;
@@ -43,8 +45,8 @@ public class xmlrpc extends Activity {
         	@Override
         	public void onItemClick(AdapterView<?> a, View v, int position, long id) {
         	String item = (String) list.getItemAtPosition(position);
-        	if (item == xmlrpc.this.getString(R.string.blog)){
-        		Intent i = new Intent(xmlrpc.this, Blog.class);
+        	if (item == Main.this.getString(R.string.blog)){
+        		Intent i = new Intent(Main.this, Blog.class);
         		Bundle b = new Bundle();
         		b.putString("sessionid", sessionid);
         		b.putString("server", server);

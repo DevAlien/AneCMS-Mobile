@@ -1,9 +1,11 @@
-package com.daneel87.AneCMS;
+package com.daneel87.AneCMS.Blog;
 
 import java.util.HashMap;
 
 import org.xmlrpc.android.XMLRPCClient;
 import org.xmlrpc.android.XMLRPCException;
+
+import com.daneel87.AneCMS.R;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -35,16 +37,16 @@ public class Blog extends Activity {
 	
 	@SuppressWarnings("unchecked")
 	private void loadPosts(){
-		XMLRPCClient client = new XMLRPCClient(server + "/xmlrpc.php?mode=blog");
+		XMLRPCClient client = new XMLRPCClient(server + "/xmlrpc.php");
     	ListView list = (ListView) findViewById(R.id.ListViewPosts);
     	ArrayAdapter<String> adapter = null;
         try {
-         	Object[] result = (Object[]) client.call("­AneCMSBlog.getPosts", sessionid);
+         	Object[] result = (Object[]) client.call("AneCMSBlog.getPosts", sessionid);
  			adapter = new ArrayAdapter<String>(this, R.layout.list_item);
  			HashMap<String,String> resultmap;
  			for(int i=0;i<result.length;i++){
  				resultmap = (HashMap<String,String>) result[i];
- 				adapter.add(resultmap.get("name")); 				
+ 				adapter.add(resultmap.get("title")); 				
  			}
 
  		} catch (XMLRPCException e) {
@@ -70,7 +72,7 @@ public class Blog extends Activity {
         // Handle item selection
         switch (item.getItemId()) {
         case R.id.new_post:
-        	Intent i = new Intent();
+        	Intent i = new Intent(this, BlogNewPost.class);
             startActivity(i);
             return true;
         default:
