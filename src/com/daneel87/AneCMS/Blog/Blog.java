@@ -42,11 +42,11 @@ public class Blog extends Activity {
     	ArrayAdapter<String> adapter = null;
         try {
          	Object[] result = (Object[]) client.call("AneCMSBlog.getPosts", sessionid);
- 			adapter = new ArrayAdapter<String>(this, R.layout.list_item);
+ 			adapter = new ArrayAdapter<String>(this, R.layout.blog_list_item);
  			HashMap<String,String> resultmap;
  			for(int i=0;i<result.length;i++){
  				resultmap = (HashMap<String,String>) result[i];
- 				adapter.add(resultmap.get("title")); 				
+ 				adapter.add(resultmap.get("title"));
  			}
 
  		} catch (XMLRPCException e) {

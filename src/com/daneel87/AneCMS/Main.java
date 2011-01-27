@@ -79,6 +79,7 @@ public class Main extends Activity {
             return true;
         case R.id.update:
         	loadSettings();
+        	getServices();
         	return true;
         default:
             return super.onOptionsItemSelected(item);
@@ -129,6 +130,10 @@ public class Main extends Activity {
  			e.printStackTrace();
  		}
  		list.setAdapter(adapter);
+ 		Context context = getApplicationContext();
+        CharSequence text = this.getString(R.string.services_updated);
+        int duration = Toast.LENGTH_LONG;
+        Toast.makeText(context, text, duration).show();
     }
     
     public void loadSettings(){

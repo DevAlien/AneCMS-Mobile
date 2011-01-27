@@ -22,6 +22,9 @@
 	<string name="post_message">Post Message</string>
 	<string name="authentication">Authentication</string>
 	<string name="post_it">Publish</string>
+	
+	<string name="services_updated">Service List Retrieved</string>
+	<string name="save">Save</string>
 
 
 </resources>

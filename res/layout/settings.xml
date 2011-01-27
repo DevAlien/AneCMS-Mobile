@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/RelativeLayout01" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+<Button android:layout_alignParentBottom="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/save" android:textSize="20sp" android:id="@+id/settings_save" android:onClick="Save"></Button>
+<ListView android:layout_width="match_parent" android:layout_height="match_parent" android:id="@android:id/list" android:layout_above="@+id/settings_save" android:layout_alignLeft="@+id/settings_save" android:layout_alignRight="@+id/settings_save"></ListView>
+
+</RelativeLayout>

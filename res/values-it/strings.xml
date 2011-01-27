@@ -19,4 +19,8 @@
 	<string name="post_message">Testo del post</string>
 	<string name="authentication">Autenticazione</string>
 	<string name="post_it">Pubblica</string>
+	
+	<string name="services_updated">Servizi Aggiornati</string>
+	<string name="save">Salva</string>
+
 </resources>

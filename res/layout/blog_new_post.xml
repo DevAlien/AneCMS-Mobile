@@ -1,8 +1,10 @@
-<LinearLayout android:id="@+id/LinearLayout01" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical">
-<EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/EditText01" android:text="@string/post_title"></EditText>
-<EditText android:inputType="textMultiLine" android:gravity="top" android:text="@string/post_message" android:id="@+id/EditText02" android:layout_width="match_parent" android:layout_height="wrap_content"></EditText>
+<RelativeLayout android:id="@+id/RelativeLayout01" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+
+<EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/post_title" android:id="@+id/EditText01" android:layout_alignParentTop="true"></EditText>
 
 
-<Button android:id="@+id/Button01" android:layout_height="wrap_content" android:layout_width="match_parent" android:text="@string/post_it" android:textSize="20sp"></Button>
+<Button android:id="@+id/Button01" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:text="@string/post_it" android:layout_width="match_parent"></Button>
 
-</LinearLayout>
+
+<EditText android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/post_message" android:inputType="textMultiLine" android:gravity="top" android:id="@+id/EditText02" android:layout_above="@+id/Button01" android:layout_alignLeft="@+id/Button01" android:layout_alignRight="@+id/Button01" android:layout_below="@+id/EditText01"></EditText>
+</RelativeLayout>
