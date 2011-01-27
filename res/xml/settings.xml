@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:key="settingscescreen"
+    android:id="@+id/settings_screen">
+    <PreferenceCategory android:title="@string/connection">
+        <EditTextPreference 
+            android:key="@string/settings_username"
+            android:title="@string/username" 
+            android:summary="@string/insert_username"
+        />
+        <EditTextPreference 
+            android:key="@string/settings_password"
+            android:title="@string/password" 
+            android:summary="@string/insert_password"
+        />
+        <EditTextPreference 
+            android:key="@string/settings_server"
+            android:title="@string/server" 
+            android:summary="@string/insert_server"
+            android:defaultValue="pict2.jpg"
+        />
+    </PreferenceCategory>
+</PreferenceScreen>

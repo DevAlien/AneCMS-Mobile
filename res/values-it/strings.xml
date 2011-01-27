@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings">Impostazioni</string>
+    <string name="connection">Connessione</string>
+
+<string name="blog">Blog</string><string name="username">Nome Utente</string><string name="insert_username">Inserisci il Nome Utente</string><string name="password">Password</string><string name="insert_password">Inserisci la Password</string><string name="server">Indirizzo del Server XML-RPC</string><string name="insert_server">inserisci l\'indirizzo del server</string>
+<string name="update_services">Aggiorna Servizi</string>
+<string name="login_error">Login errato, controlla i dati inseriti</string>
+<string name="register">Registra Utenti</string>
+<string name="users">Utenti</string>
+<string name="home">Home</string>
+<string name="new_post">Nuovo Post</string>
+</resources>

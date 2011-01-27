@@ -1,0 +1,65 @@
+package com.daneel.xmlrpc;
+
+import java.util.HashMap;
+
+import org.xmlrpc.android.XMLRPCClient;
+import org.xmlrpc.android.XMLRPCException;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+public class Blog extends Activity {
+
+	private String server;
+	private String sessionid;
+	
+	/** Called when the activity is first created. */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+	    super.onCreate(savedInstanceState);
+	    setContentView(R.layout.blog);
+	    
+	    Bundle b = getIntent().getExtras();
+	    server = b.getString("server");
+	    sessionid = b.getString("sessionid");
+
+	    loadPosts();
+	    // TODO Auto-generated method stub
+	}
+	
+	@SuppressWarnings("unchecked")
+	private void loadPosts(){
+		XMLRPCClient client = new XMLRPCClient(server + "/xmlrpc.php?mode=blog");
+    	ListView list = (ListView) findViewById(R.id.ListViewPosts);
+    	ArrayAdapter<String> adapter = null;
+        try {
+         	Object[] result = (Object[]) client.call("­AneCMSBlog.getPosts", sessionid);
+ 			adapter = new ArrayAdapter<String>(this, R.layout.list_item);
+ 			HashMap<String,String> resultmap;
+ 			for(int i=0;i<result.length;i++){
+ 				resultmap = (HashMap<String,String>) result[i];
+ 				adapter.add(resultmap.get("name")); 				
+ 			}
+
+ 		} catch (XMLRPCException e) {
+ 			e.printStackTrace();
+ 		}
+ 		list.setAdapter(adapter);
+	}
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        try {
+			//inflater.inflate(R.menu.blog_menu, menu);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        return true;
+    }
+}
