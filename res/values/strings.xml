@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    
-    <string name="app_name">AneCMS Mobile</string><string name="settings_username">username</string><string name="settings_password">password</string><string name="settings_server">server</string>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+	<string name="app_name">AneCMS Mobile</string><string name="settings_username">username</string><string name="settings_password">password</string><string name="settings_server">server</string>
+
+
+    <string name="settings">Settings</string>
+    <string name="connection">Connection</string>
+	<string name="blog">Blog</string>
+	<string name="username">Username</string>
+	<string name="insert_username">Insert the Username</string>
+	<string name="password">Password</string>
+	<string name="insert_password">Insert the Password</string>
+	<string name="server">XML-RPC Server</string>
+	<string name="insert_server">Insert the Server Address</string>
+	<string name="update_services">Reload Services</string>
+	<string name="login_error">Error Logging in, check settings</string>
+	<string name="register">Register Users</string>
+	<string name="users">Users</string>
+	<string name="home">Home</string>
+	<string name="new_post">New Post</string>
+	<string name="post_title">Post Title</string>
+	<string name="post_message">Post Message</string>
+	<string name="authentication">Authentication</string>
+	<string name="post_it">Publish</string>
+
+
 </resources>
