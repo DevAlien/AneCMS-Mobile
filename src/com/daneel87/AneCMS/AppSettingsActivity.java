@@ -1,4 +1,4 @@
-package com.daneel.xmlrpc;
+package com.daneel87.AneCMS;
 
 
 import android.os.Bundle;

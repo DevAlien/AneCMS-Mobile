@@ -1,4 +1,4 @@
-package com.daneel.xmlrpc;
+package com.daneel87.AneCMS;
 
 import java.util.HashMap;
 
@@ -6,9 +6,11 @@ import org.xmlrpc.android.XMLRPCClient;
 import org.xmlrpc.android.XMLRPCException;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -55,11 +57,24 @@ public class Blog extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         try {
-			//inflater.inflate(R.menu.blog_menu, menu);
+			inflater.inflate(R.menu.blog_menu, menu);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         return true;
+    }
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+        case R.id.new_post:
+        	Intent i = new Intent();
+            startActivity(i);
+            return true;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
     }
 }
