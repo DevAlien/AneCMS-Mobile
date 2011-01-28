@@ -27,4 +27,6 @@
 	<string name="save">Save</string>
 
 
+<string name="please_wait">Please wait...</string>
+<string name="retrieving_data">Retrieving data ...</string>
 </resources>

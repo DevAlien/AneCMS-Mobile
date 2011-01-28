@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:padding="10dp"
-    android:textSize="16sp" >
-</TextView>
+
+<LinearLayout android:id="@+id/LinearLayout01" android:layout_width="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="horizontal" android:layout_height="wrap_content">
+	<ImageView android:id="@+id/ImageView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_menu_agenda"></ImageView>
+	<LinearLayout android:id="@+id/LinearLayout02" android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="vertical">
+		<TextView android:id="@+id/PostTitle" android:textSize="16sp" android:layout_height="wrap_content" android:layout_width="fill_parent" android:text="titolo"></TextView>
+		<RelativeLayout android:id="@+id/RelativeLayout02" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="bottom" android:paddingBottom="2sp">
+			<TextView android:layout_width="wrap_content" android:text="data" android:layout_height="wrap_content" android:id="@+id/PostDate" android:layout_alignParentRight="true" android:paddingRight="5sp"></TextView>
+			<TextView android:layout_width="wrap_content" android:text="autore" android:layout_height="wrap_content" android:id="@+id/PostAutor" android:layout_alignParentLeft="true"></TextView>
+		</RelativeLayout>
+	</LinearLayout>
+</LinearLayout>

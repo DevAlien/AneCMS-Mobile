@@ -23,4 +23,6 @@
 	<string name="services_updated">Servizi Aggiornati</string>
 	<string name="save">Salva</string>
 
+<string name="please_wait">Attendi...</string>
+<string name="retrieving_data">Scarico i dati...</string>
 </resources>

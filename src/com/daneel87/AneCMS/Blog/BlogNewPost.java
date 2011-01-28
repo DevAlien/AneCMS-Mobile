@@ -1,7 +1,6 @@
 package com.daneel87.AneCMS.Blog;
 
 import com.daneel87.AneCMS.R;
-import com.daneel87.AneCMS.R.layout;
 
 import android.app.Activity;
 import android.os.Bundle;

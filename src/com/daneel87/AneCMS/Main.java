@@ -3,6 +3,7 @@ package com.daneel87.AneCMS;
 import java.util.HashMap;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -79,7 +80,13 @@ public class Main extends Activity {
             return true;
         case R.id.update:
         	loadSettings();
-        	getServices();
+        	if (checkSession(sessionid)){
+        		getServices();
+        	}else{
+        		if (login()){
+        			getServices();
+        		}
+        	}
         	return true;
         default:
             return super.onOptionsItemSelected(item);
@@ -100,6 +107,7 @@ public class Main extends Activity {
     
     @SuppressWarnings("unchecked")
 	private void getServices(){
+    	ProgressDialog progressDialog = ProgressDialog.show(Main.this, this.getString(R.string.please_wait), this.getString(R.string.retrieving_data), true);
     	XMLRPCClient client = new XMLRPCClient(server + "/xmlrpc.php");
     	ListView list = (ListView) findViewById(R.id.ListView01);
     	ArrayAdapter<String> adapter = null;
@@ -130,6 +138,7 @@ public class Main extends Activity {
  			e.printStackTrace();
  		}
  		list.setAdapter(adapter);
+ 		progressDialog.dismiss();
  		Context context = getApplicationContext();
         CharSequence text = this.getString(R.string.services_updated);
         int duration = Toast.LENGTH_LONG;
@@ -156,9 +165,8 @@ public class Main extends Activity {
         	return;
         }
         
-        if (changed || sessionid == null){
+        if (changed || checkSession(sessionid)){
         	login();
-        	getServices();
         }
     }
     
@@ -178,5 +186,19 @@ public class Main extends Activity {
 			return false;
  		}
     }
+	
+	public boolean checkSession(String sessionid){
+		if (sessionid == null){
+			return false;
+		}
+		
+		XMLRPCClient client = new XMLRPCClient(server + "/xmlrpc.php");
+     	try {
+			Boolean result = (Boolean) client.call("AneCMS.check", sessionid);
+			return result;
+		} catch (XMLRPCException e) {
+			return false;
+		}
+	}
     
 }
