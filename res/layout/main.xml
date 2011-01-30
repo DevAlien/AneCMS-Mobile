@@ -4,5 +4,6 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-<ListView android:id="@+id/ListView01" android:layout_width="fill_parent" android:layout_height="fill_parent"></ListView>
+<TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:gravity="center" android:id="@+id/SiteName" android:text="Titolo del Sito" android:textSize="20sp" android:textStyle="bold"></TextView><ListView android:id="@+id/ListView01" android:layout_width="fill_parent" android:layout_height="fill_parent"></ListView>
+
 </LinearLayout>

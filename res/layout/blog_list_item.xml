@@ -3,10 +3,10 @@
 <LinearLayout android:id="@+id/LinearLayout01" android:layout_width="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="horizontal" android:layout_height="wrap_content">
 	<ImageView android:id="@+id/ImageView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_menu_agenda"></ImageView>
 	<LinearLayout android:id="@+id/LinearLayout02" android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="vertical">
-		<TextView android:id="@+id/PostTitle" android:textSize="16sp" android:layout_height="wrap_content" android:layout_width="fill_parent" android:text="titolo"></TextView>
+		<TextView android:id="@+id/PostTitle" android:layout_height="wrap_content" android:layout_width="fill_parent" android:text="titolo" android:textSize="15sp"></TextView>
 		<RelativeLayout android:id="@+id/RelativeLayout02" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="bottom" android:paddingBottom="2sp">
-			<TextView android:layout_width="wrap_content" android:text="data" android:layout_height="wrap_content" android:id="@+id/PostDate" android:layout_alignParentRight="true" android:paddingRight="5sp"></TextView>
-			<TextView android:layout_width="wrap_content" android:text="autore" android:layout_height="wrap_content" android:id="@+id/PostAutor" android:layout_alignParentLeft="true"></TextView>
+			<TextView android:layout_width="wrap_content" android:text="data" android:layout_height="wrap_content" android:id="@+id/PostDate" android:layout_alignParentRight="true" android:paddingRight="5sp" android:textSize="10sp"></TextView>
+			<TextView android:layout_width="wrap_content" android:text="autore" android:layout_height="wrap_content" android:id="@+id/PostAutor" android:layout_alignParentLeft="true" android:textSize="12sp"></TextView>
 		</RelativeLayout>
 	</LinearLayout>
 </LinearLayout>

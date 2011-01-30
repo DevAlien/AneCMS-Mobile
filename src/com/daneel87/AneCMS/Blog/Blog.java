@@ -1,5 +1,6 @@
 package com.daneel87.AneCMS.Blog;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -47,7 +48,8 @@ public class Blog extends Activity {
         list.setOnItemClickListener(new OnItemClickListener() {
         	@Override
         	public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-        		HashMap<String,String> item = (HashMap<String,String>) list.getItemAtPosition(position);
+        		@SuppressWarnings("unchecked")
+				HashMap<String,String> item = (HashMap<String,String>) list.getItemAtPosition(position);
         		Intent i = new Intent(Blog.this, BlogPost.class);
         		Bundle b = new Bundle();
         		b.putString("titolo", item.get("title"));
@@ -96,6 +98,10 @@ public class Blog extends Activity {
         switch (item.getItemId()) {
         case R.id.new_post:
         	Intent i = new Intent(this, BlogNewPost.class);
+        	Bundle b = new Bundle();
+    		b.putString("sessionid", sessionid);
+    		b.putString("server", server);
+    		i.putExtras(b);
             startActivity(i);
             return true;
         default:
@@ -125,13 +131,14 @@ public class Blog extends Activity {
                         TextView pa = (TextView) v.findViewById(R.id.PostAutor);
                         TextView pd = (TextView) v.findViewById(R.id.PostDate);
                         if (pt != null) {
-                              pt.setText(o.get("title"));                            }
+                            pt.setText(o.get("title"));                            
+                        }
                         if(pa != null){
-                              pa.setText(o.get("autore"));
+                            pa.setText(o.get("username"));
                         }
                         if(pd != null){
-                            pd.setText(o.get("data"));
-                      }
+                        	pd.setText(new Timestamp((Long.decode(o.get("insert_date")))*1000).toLocaleString());
+                        }
                 }
                 return v;
         }

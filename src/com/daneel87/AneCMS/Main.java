@@ -17,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.xmlrpc.android.XMLRPCClient;
@@ -40,6 +41,12 @@ public class Main extends Activity {
         setContentView(R.layout.main);
         
         loadSettings();
+        if (checkSession(sessionid)){
+    		getServices();
+    	}
+        
+        TextView titolo = (TextView) findViewById(R.id.SiteName);
+        titolo.setText(getSiteName());
         
         final ListView list = (ListView) findViewById(R.id.ListView01);
         list.setOnItemClickListener(new OnItemClickListener() {
@@ -189,7 +196,7 @@ public class Main extends Activity {
 	
 	public boolean checkSession(String sessionid){
 		if (sessionid == null){
-			return false;
+			return login();
 		}
 		
 		XMLRPCClient client = new XMLRPCClient(server + "/xmlrpc.php");
@@ -197,7 +204,17 @@ public class Main extends Activity {
 			Boolean result = (Boolean) client.call("AneCMS.check", sessionid);
 			return result;
 		} catch (XMLRPCException e) {
-			return false;
+			return login();
+		}
+	}
+	
+	public String getSiteName(){
+		XMLRPCClient client = new XMLRPCClient(server + "/xmlrpc.php");
+		try {
+			HashMap<String,String> result = (HashMap<String,String>) client.call("AneCMS.getSiteTitle");
+			return result.get("title");
+		} catch (Exception e) {
+			return "";
 		}
 	}
     

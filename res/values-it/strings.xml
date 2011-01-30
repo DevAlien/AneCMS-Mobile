@@ -25,4 +25,7 @@
 
 <string name="please_wait">Attendi...</string>
 <string name="retrieving_data">Scarico i dati...</string>
+<string name="server_not_valid">Server Non Valido</string>
+<string name="posted">Articolo Pubblicato</string>
+<string name="not_posted">Impossibile inviare l\'Articolo</string>
 </resources>

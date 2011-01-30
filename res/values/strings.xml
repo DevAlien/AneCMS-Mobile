@@ -29,4 +29,7 @@
 
 <string name="please_wait">Please wait...</string>
 <string name="retrieving_data">Retrieving data ...</string>
+<string name="server_not_valid">Invalid Server</string>
+<string name="posted">Article Posted</string>
+<string name="not_posted">Error Posting Article</string>
 </resources>
