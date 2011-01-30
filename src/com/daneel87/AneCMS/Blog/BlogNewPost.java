@@ -31,7 +31,7 @@ public class BlogNewPost extends Activity {
     public void Post(View v) {
     	EditText titolo = (EditText)findViewById(R.id.NewPostTitle);
     	EditText contenuto = (EditText)findViewById(R.id.NewPostContent);
-    	String[] parameters = new String[] {sessionid,titolo.getText().toString(), contenuto.getText().toString(), ""};
+    	String[] parameters = new String[] {sessionid,titolo.getText().toString(), contenuto.getText().toString().replace("\n", "<br />"), ""};
     	XMLRPCClient client = new XMLRPCClient(server + "/xmlrpc.php");
     	try {
 			Boolean result = (Boolean) client.call("AneCMSBlog.addPost", parameters);
