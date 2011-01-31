@@ -15,6 +15,7 @@ public class BlogNewPost extends Activity {
 
 	private String server;
 	private String sessionid;
+	private EditText contenuto; 
 	
 	/** Called when the activity is first created. */
 	@Override
@@ -25,12 +26,12 @@ public class BlogNewPost extends Activity {
 	    Bundle b = getIntent().getExtras();
 	    server = b.getString("server");
 	    sessionid = b.getString("sessionid");
-	    // TODO Auto-generated method stub
+	    
+	    contenuto = (EditText)findViewById(R.id.NewPostContent);
 	}
 
     public void Post(View v) {
     	EditText titolo = (EditText)findViewById(R.id.NewPostTitle);
-    	EditText contenuto = (EditText)findViewById(R.id.NewPostContent);
     	String[] parameters = new String[] {sessionid,titolo.getText().toString(), contenuto.getText().toString().replace("\n", "<br />"), ""};
     	XMLRPCClient client = new XMLRPCClient(server + "/xmlrpc.php");
     	try {
@@ -50,5 +51,24 @@ public class BlogNewPost extends Activity {
         Toast.makeText(getApplicationContext(), text, duration).show();
 	}
 	
+	public void setBold(View v){
+		int inizio = contenuto.getSelectionStart();
+		int fine = contenuto.getSelectionEnd();
+		contenuto.getText().insert(inizio, "[b]");
+		contenuto.getText().insert(fine+3, "[/b]");
+	}
+    
+	public void setItalic(View v){
+		int inizio = contenuto.getSelectionStart();
+		int fine = contenuto.getSelectionEnd();
+		contenuto.getText().insert(inizio, "[i]");
+		contenuto.getText().insert(fine+3, "[/i]");
+	}
 	
+	public void setUnderline(View v){
+		int inizio = contenuto.getSelectionStart();
+		int fine = contenuto.getSelectionEnd();
+		contenuto.getText().insert(inizio, "[u]");
+		contenuto.getText().insert(fine+3, "[/u]");
+	}
 }

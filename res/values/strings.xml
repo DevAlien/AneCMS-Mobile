@@ -32,4 +32,6 @@
 <string name="server_not_valid">Invalid Server</string>
 <string name="posted">Article Posted</string>
 <string name="not_posted">Error Posting Article</string>
+<string name="u_button"><u>U</u></string>
+<string name="rem_post">Delete Post</string>
 </resources>

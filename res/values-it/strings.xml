@@ -28,4 +28,6 @@
 <string name="server_not_valid">Server Non Valido</string>
 <string name="posted">Articolo Pubblicato</string>
 <string name="not_posted">Impossibile inviare l\'Articolo</string>
+
+<string name="rem_post">Elimina Articolo</string>
 </resources>

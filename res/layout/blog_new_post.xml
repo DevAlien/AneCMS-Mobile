@@ -2,6 +2,23 @@
     <TextView android:id="@+id/textView1" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_width="match_parent" android:text="@string/post_title" android:textSize="20sp"></TextView>
     <EditText android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_below="@+id/textView1" android:layout_alignLeft="@+id/textView1" android:layout_alignRight="@+id/textView1" android:id="@+id/NewPostTitle"></EditText>
     <TextView android:id="@+id/textView2" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_below="@+id/NewPostTitle" android:layout_alignLeft="@+id/NewPostTitle" android:layout_alignRight="@+id/NewPostTitle" android:text="@string/post_message" android:textSize="20sp"></TextView>
-    <EditText android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_below="@+id/textView2" android:layout_alignLeft="@+id/textView2" android:layout_alignRight="@+id/textView2" android:layout_above="@+id/button1" android:inputType="textMultiLine" android:gravity="top" android:id="@+id/NewPostContent"></EditText>
-    <Button android:text="@string/post_it" android:layout_alignParentBottom="true" android:id="@+id/button1" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="20sp" android:onClick="Post"></Button>
+    
+    <EditText android:inputType="textMultiLine" android:gravity="top" android:layout_height="match_parent" android:id="@+id/NewPostContent" android:layout_below="@+id/textView2" android:layout_alignRight="@+id/textView2" android:layout_above="@+id/button1" android:layout_toRightOf="@+id/ScrollView01" android:layout_width="fill_parent"></EditText>
+    <ScrollView android:id="@+id/ScrollView01" android:layout_height="fill_parent" android:layout_alignTop="@+id/NewPostContent" android:layout_alignBottom="@+id/NewPostContent" android:layout_width="wrap_content">
+    	<LinearLayout android:layout_height="wrap_content" android:orientation="vertical" android:id="@+id/LinearLayout01" android:layout_width="wrap_content">
+    		<Button android:text="B" android:id="@+id/setBold" android:layout_width="50sp" android:layout_height="50sp" android:onClick="setBold" android:textStyle="bold"></Button>
+			<Button android:text="I" android:id="@+id/setItalic" android:layout_width="50sp" android:layout_height="50sp" android:onClick="setItalic" android:textStyle="italic"></Button>
+			<Button android:text="@string/u_button" android:id="@+id/setUnderline" android:layout_width="50sp" android:layout_height="50sp" android:onClick="setUnderline"></Button>
+		</LinearLayout>
+	</ScrollView>
+	<Button android:text="@string/post_it" android:layout_alignParentBottom="true" android:id="@+id/button1" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="20sp" android:onClick="Post"></Button>
+
+
+
+
+
+
+
+
+
 </RelativeLayout>

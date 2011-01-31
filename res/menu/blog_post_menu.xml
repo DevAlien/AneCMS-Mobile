@@ -1,0 +1,3 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:enabled="true" android:title="@string/rem_post" android:id="@+id/rem_post" android:icon="@android:drawable/ic_menu_delete"></item>
+</menu>
